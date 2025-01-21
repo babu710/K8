@@ -1,0 +1,34 @@
+
+
+
+Mongo DB
+
+
+const result = db.adminCommand({ listDatabases: 1 });
+let totalSize = 0;
+
+result.databases.forEach((db) => {
+  totalSize += db.sizeOnDisk;
+});
+
+print(`Total Size on Disk: ${totalSize} bytes`);
+
+
+
+
+MySQL 
+
+SELECT 
+    SUM(data_length + index_length) AS total_size_in_bytes
+FROM 
+    information_schema.tables;
+
+
+
+
+
+
+
+	
+
+ 
